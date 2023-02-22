@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "quiz_page/register.css" %}">
+{% endblock %}
+
+{% block content %}
+    {%if form.errors%}
+        <p>There was an error with your form...</p>
+    {% endif %}
+
+    <div class="register_form">
+        <h1>Register</h1>
+        <form id="register" action="register_user" class="input-group" method="POST">
+            {% csrf_token %}
+            {% render_field form.username class="form-control" placeholder="Username" type="text" %}
+            {% render_field form.first_name class="form-control" placeholder="First Name" type="text" %}
+            {% render_field form.last_name class="form-control" placeholder="Last Name" type="text" %}
+            {% render_field form.email class="form-control" placeholder="Email" type="text" %}
+            {% render_field form.password1 class="form-control" placeholder="Enter Password" type="password" %}
+            {% render_field form.password2 class="form-control" placeholder="Confirm Password" type="password" %}
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+{% endblock %}

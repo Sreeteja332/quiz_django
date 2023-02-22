@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    {% block css_files%}{% endblock %}
+</head>
+<body>
+    <nav navbar.navbar-light.bg-light>
+    <nav class="header">
+        <label class="logo">Quiz</label>
+        <ul>
+            {%if user.is_authenticated %}
+            <li><a href="{% url "dashboard" %}">Dashboard</a></li>
+                <li><a>{{request.user.username}}</a></li>
+                <li><a href="{% url "logout" %}">Logout</a></li>
+            {%else%}
+                <li><a class="active" href="{% url "starting_page" %}">Home</a></li>
+                <li><a href="{% url "admin:index" %}" target="_blank">Admin</a></li>
+                <li><a href="{% url "register" %}">Register</a></li>
+                <li><a href="{% url "login_user" %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {%if messages%} 
+        {%for message in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

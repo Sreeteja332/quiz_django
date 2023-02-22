@@ -1,0 +1,67 @@
+
+
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 98%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+
+.content-table thead tr{
+    background-color: #4475a0;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+    font-weight: bold;
+    color: #4475a9;
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #4475a9;
+}
+
+.bt{
+    text-align: center;
+}
+
+.submit-btn{
+    width: 8%;
+    height: 50px;
+    border: 1px solid;
+    background: #1e2761;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.submit-btn:hover{
+    border-color: #1e2761;
+    transition: .5s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+div.options{
+    padding-top: 5px;
+}

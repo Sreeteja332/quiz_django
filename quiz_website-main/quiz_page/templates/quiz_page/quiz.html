@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Quiz Test
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "quiz_page/quiz.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+            {%for i in exam%}
+            {{i.question}}
+            <div class="options">
+                <form action="quiz" method="POST">
+                    {% csrf_token %}
+                    <input type="radio" id="opt1" name="{{i.question}}" value="{{i.option1}}">
+                <label for="opt1">{{i.option1}}</label>
+                <div class="options">
+                    <input type="radio" id="opt2" name="{{i.question}}" value="{{i.option2}}">
+                    <label for="opt2">{{i.option2}}</label>
+                </div>
+                <div class="options">
+                    <input type="radio" id="opt3" name="{{i.question}}" value="{{i.option3}}">
+                    <label for="opt3">{{i.option3}}</label>
+                </div>
+                <div class="options">
+                    <input type="radio" id="opt4" name="{{i.question}}" value="{{i.option4}}">
+                    <label for="opt4">{{i.option4}}</label>
+                </div>
+            </div><br>
+            {% endfor %}
+            <div class="bt">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+            </form>
+    </div>
+{% endblock %}

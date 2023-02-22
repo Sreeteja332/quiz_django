@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+    Result Page
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "quiz_page/result.css" %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="result">
+    Score: {{score}}<br>
+    Percentage: {{percent}}%<br>
+    Correct Answers: {{correct}}<br>
+    Wrong Answers: {{wrong}}<br>
+    Total Questions: {{total}}<br>
+    </div>
+    {% comment %} <div class="bt">
+        <form action="dashboard">
+            {% csrf_token %}
+            <button class="submit-btn">Go to Dashboard</button>
+        </form>
+    </div> {% endcomment %}
+{% endblock %}

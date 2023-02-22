@@ -1,0 +1,29 @@
+.result{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 35px;
+}
+
+.bt{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.submit-btn{
+    width: 13%;
+    height: 50px;
+    border: 1px solid;
+    background: #1e2761;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.submit-btn:hover{
+    border-color: #1e2761;
+    transition: .5s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
